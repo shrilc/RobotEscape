@@ -20,4 +20,6 @@
    2. extract and copy app and readme file to your local repository
    3. install pygame module
    4. execute the main.py file
-   
+
+### Exercise 4
+1. why multiple if's are used while handling keys instead of elif

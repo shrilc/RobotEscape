@@ -2,53 +2,39 @@ import pygame
 
 pygame.init()
 
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
 
-screen_width = 800
-screen_height = 600
-screen = pygame.display.set_mode((screen_width, screen_height))
+# Create screen
+# size argument in set_mode requires tuple - it is immutable - changed ,modified
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("RobotEscape")
 
-BLUE = (0, 191, 255)
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+robot_image = pygame.image.load("robot2.png")
+robot_x = 10
+robot_y = 20
 
-
-class Robot:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.speed = 5
-        #self.image = pygame.Surface((10, 10))
-        self.image = pygame.image.load("robot.png")
-        #self.image.fill(BLUE)
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
-
-    def draw(self):
-        screen.blit(self.image, (self.rect.x, self.rect.y))
-
-
-robot = Robot(10, 10)
-
-while True:
+# infinite loop
+run = True
+while run:
+    #Event handler
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
+            run = False
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        robot.rect.x -= 5
+        robot_x -= 5
     if keys[pygame.K_RIGHT]:
-        robot.rect.x += 5
+        robot_x += 5
     if keys[pygame.K_UP]:
-        robot.rect.y -= 5
+        robot_y -= 5
     if keys[pygame.K_DOWN]:
-        robot.rect.y += 5
+        robot_y += 5
 
-    screen.fill(BLACK)
-    robot.draw()
+    screen.blit(robot_image, (robot_x, robot_y))
+    #screen.blit(robot_image, (40, 50))
     pygame.display.update()
 
+pygame.quit()
 

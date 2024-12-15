@@ -23,3 +23,9 @@
 
 ### Exercise 4
 1. why multiple if's are used while handling keys instead of elif
+
+### Exercise 5
+1. Integrate Object appear and disappear module with robot
+
+### Exercise 6
+1. Check for collision between robot and object

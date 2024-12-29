@@ -29,3 +29,10 @@
 
 ### Exercise 6
 1. Check for collision between robot and object
+
+### Exercise 7
+1. Change the background from white to something of your imagination
+2. Update object rect to image (bad robot)
+3. Scores and Levels and display the results or text on the top side of the screens
+4. Convert all the collision messages into Game over text and provide restart button on the screen for user to play
+5. Provide quit button next to restart as well
